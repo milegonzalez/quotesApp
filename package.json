@@ -1,0 +1,30 @@
+{
+  "name": "relevant-quote-reminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "react": "webpack -d --watch",
+    "server": "nodemon server/index.js"
+  },
+  "author": "Milena-Milano",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.0",
+    "express": "^4.15.0",
+    "jquery": "^3.3.1",
+    "mongoose": "^4.9.6",
+    "mysql": "^2.16.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.6.2",
+    "request": "^2.81.0",
+    "styled-components": "^4.1.3"
+  }
+}
