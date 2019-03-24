@@ -22,6 +22,8 @@ class App extends Component {
       ],
       showQuotes: false
     }
+
+    this.randomlyPullQuote = this.randomlyPullQuote.bind(this)
   }
 
   componentDidMount() {
@@ -31,18 +33,35 @@ class App extends Component {
         (result) => {
           this.setState({ allExcerpts: result })
         }
-      ).then(
-        console.log('result,', this.state.allExcerpts)
       )
   }
+
+  randomlyPullQuote() {
+    let quotes = this.state.allExcerpts
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function getRandomArbitrary(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+
+    setTimeout(function(){
+      //change setout time (3000) to the function of alertRange.
+      let alertRange =  getRandomArbitrary(3000, 7000)
+      let number = getRandomInt(quotes.length - 1)
+      alert(quotes[number].QUOTE, quotes[number].AUTHOR)
+    }, 3000)
+  }
+
 
   render() {
     return (
       <div className="QuoteApp">
         <Save />
         <AllQuotes {...this.state.allExcerpts} />
-        <button style={styles.button} onClick={this.randomlyPullQuote}>Generate Random Excerpt</button>
-        <button style={styles.button} onClick={this.returnAllQuotes} >See your Excerpts</button>
+        <div>{this.randomlyPullQuote()}</div>
       </div>
 
     )

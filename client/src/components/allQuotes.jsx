@@ -3,8 +3,6 @@ import styles from './styles.jsx'
 
 const AllQuotes = (props) => {
   let quotes = props;
-  console.log('these are props', quotes[0].QUOTE)
-
   return (
     <div>
       <h1 style={styles.h1}>All saved Excerpts </h1>
