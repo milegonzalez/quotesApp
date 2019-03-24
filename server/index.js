@@ -25,6 +25,9 @@ app.post('/quotesApp', function (req, res) {
 });
 
 app.get('/quotesApp', function (req, res) {
+  if(req.body){
+    console.log(req.body)
+  }
   let qry = `SELECT * FROM quotes`
 
   database.connection.query(qry, function (err, result) {
